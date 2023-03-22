@@ -342,13 +342,13 @@ userController.deleteUserByAdmin = async(req, res) => {
 /////////////////////////////////////
 userController.getAllService = async(req, res) => {
     try {
-        const user = await Service.findAll()
+        const service = await Service.findAll()
 
         return res.json(
             {
                 success: true,
                 message: "access succes successfully",
-                user: Service
+                user: service
             }
         );
     } catch (error) {
