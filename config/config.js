@@ -1,14 +1,13 @@
 require('dotenv').config();
 
-module.exports ={
-    
+module.exports = {
   "development": {
-    "username": "root",
-    "password": "p53KDR9A2QGBGhIaeXxv",
-    "database": "railway",
-    "host": "containers-us-west-201.railway.app",
-    "port": 7843,
-    "dialect": "mysql"
+    "username": process.env.MYSQL_USER,
+    "password": process.env.MYSQL_PASSWORD,
+    "database": process.env.MYSQL_DATABASE,
+    "host": process.env.MYSQL_HOST,
+    "dialect": "mysql",
+    "port": process.env.MYSQL_PORT
   },
   "test": {
     "username": "root",

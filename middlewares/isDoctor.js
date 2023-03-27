@@ -1,4 +1,5 @@
 const isDoctor = (req, res, next) => {
+
     try {
       const isDoctor = req.roleId.includes('doctor')
       if (!isDoctor) {
@@ -9,6 +10,7 @@ const isDoctor = (req, res, next) => {
             }
           );
       }
+      console.log('lunes');
       next()
     } catch (error) {
         return res.status(500).json(

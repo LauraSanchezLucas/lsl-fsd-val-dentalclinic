@@ -138,6 +138,9 @@ userController.getAppointmentDoctor = async(req, res) => {
         )
     }
 }
+
+
+
 userController.profile = async(req, res) => {
     try {
         const userId = req.userId;
@@ -256,6 +259,8 @@ userController.updateUserByAdmin = async (req, res) => {
 }
 
 userController.findAllUsersDoctor = async (req, res) => {
+
+    console.log('holallllllll');
     try {
         const user = await User.findAll(
             {
@@ -337,29 +342,5 @@ userController.deleteUserByAdmin = async(req, res) => {
 }
 
 
-
-
-/////////////////////////////////////
-userController.getAllService = async(req, res) => {
-    try {
-        const service = await Service.findAll()
-
-        return res.json(
-            {
-                success: true,
-                message: "access succes successfully",
-                user: service
-            }
-        );
-    } catch (error) {
-        return res.status(500).json(
-            {
-                success: false,
-                message: "Somenthing went wrong",
-                error_message: error.message
-            }
-        )
-    }
-}
 
 module.exports = userController;

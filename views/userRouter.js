@@ -14,6 +14,6 @@ router.put('/updateProfile/:id', verifyToken, isAdmin, userController.updateUser
 router.get('/getProfilesDoc', verifyToken, isDoctor, userController.findAllUsersDoctor);
 router.get('/getProfilesAdm', verifyToken, isAdmin, userController.findAllUsersAdmin);
 router.delete('/deleteUser/:id', verifyToken, isAdmin, userController.deleteUserByAdmin);
-router.get('/allservice', userController.getAllService)
+
 
 module.exports = router;

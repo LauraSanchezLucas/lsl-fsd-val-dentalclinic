@@ -6,14 +6,18 @@ const authController = {};
 
 authController.register = async(req, res) => {
     try {
-        const { name, surname, email, password } = req.body;
+        const { name, surname, nif, direction, email, birth_date, phone, password } = req.body;
 
         const encryptedPassword = bcrypt.hashSync(password, 10);
 
         const newUser = {
             name: name,
             surname: surname,
+            nif: nif,
+            direction: direction,
             email: email,
+            birth_date: birth_date,
+            phone: phone,
             password: encryptedPassword
         }
 
